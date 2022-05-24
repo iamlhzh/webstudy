@@ -2,10 +2,10 @@ package com.lhzh.mybatisstudy.controller;
 
 import com.lhzh.mybatisstudy.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class HelloController {
 
     @Autowired
@@ -21,5 +21,10 @@ public class HelloController {
     public String getWeixin(String id){
         String str = helloService.getWeixin(id);
         return str;
+    }
+
+    @RequestMapping("sayHello")
+    public String sayHello(){
+        return "hello";
     }
 }
